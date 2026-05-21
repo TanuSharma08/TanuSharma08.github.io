@@ -42,6 +42,15 @@ body{
   line-height:1.7;
 }
 
+/* JUSTIFIED TEXT for About Me, Projects, Experience, and Contact */
+.about-card p,      /* About Me paragraphs */
+.project-card p,    /* Project descriptions */
+.timeline-item p,   /* Experience descriptions */
+.contact-box p {    /* Let's Connect paragraph */
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .container{
   width:min(1100px,90%);
   margin:auto;
@@ -392,8 +401,7 @@ section{
   color:var(--muted);
 }
 
-/* SKILLS */
-
+/* SKILLS - IMPROVED VERSION */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -406,6 +414,8 @@ section{
   border-radius:24px;
   padding:30px;
   transition:all 0.3s;
+  display:flex;
+  flex-direction:column;
 }
 
 .skill-card:hover{
@@ -415,21 +425,26 @@ section{
 
 .skill-card h3{
   margin-bottom:20px;
+  text-align:left;
 }
 
 .skill-tags{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:12px;
+  justify-content:flex-start;
+  align-items:center;
 }
 
 .skill-tags span{
   background:rgba(129,140,248,0.12);
   color:#c7d2fe;
-  padding:8px 14px;
+  padding:8px 16px;
   border-radius:999px;
   font-size:.9rem;
   transition:all 0.2s;
+  display:inline-block;
+  text-align:center;
 }
 
 .skill-tags span:hover{
@@ -557,17 +572,13 @@ section{
 }
 
 /* CONTACT */
-
-.contact{
-  text-align:center;
-}
-
 .contact-box{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:28px;
-  padding:40px 30px;
+  padding:35px 30px;
   transition:all 0.3s;
+  text-align: center;
 }
 
 .contact-box:hover{
@@ -577,8 +588,9 @@ section{
 
 .contact-box p{
   color:var(--muted);
-  max-width:600px;
-  margin:20px auto 40px;
+  max-width:700px;
+  margin:0 auto 30px;
+  text-align: justify;
 }
 
 .contact-buttons{
@@ -677,6 +689,59 @@ footer{
     padding:22px 0;
   }
 
+footer .container {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+    width: 100%;
+    scrollbar-width: none;  /* Hide scrollbar Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
+  }
+  
+  footer .container::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar Chrome/Safari */
+  }
+
+.skill-card {
+    padding: 20px;
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: nowrap;      /* Don't wrap to next line */
+    overflow-x: auto;       /* Allow horizontal scroll if needed */
+    gap: 10px;
+    padding-bottom: 8px;    /* Space for scroll indicator */
+    -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
+  }
+  
+  .skill-tags span {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    white-space: nowrap;    /* Keep skill text in one line */
+    flex-shrink: 0;         /* Prevent tags from shrinking */
+  }
+  
+  /* Hide scrollbar but keep functionality (cleaner look) */
+  .skill-tags {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--card);
+  }
+  
+  .skill-tags::-webkit-scrollbar {
+    height: 3px;
+  }
+  
+  .skill-tags::-webkit-scrollbar-track {
+    background: var(--card);
+    border-radius: 10px;
+  }
+  
+  .skill-tags::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+  }
 }
 
 @media(max-width:600px){
@@ -693,6 +758,24 @@ footer{
     font-size:0.75rem;
   }
 
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    flex: 1;
+    width: 50%;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+
   .contact-buttons{
     flex-direction:column;
     align-items:center;
@@ -704,6 +787,15 @@ footer{
     justify-content:center;
   }
 
+  /* SKILLS mobile further improvements */
+  .skill-tags{
+    gap:8px;
+  }
+  
+  .skill-tags span{
+    padding:5px 10px;
+    font-size:0.75rem;
+  }
 }
 
 </style>
@@ -753,7 +845,7 @@ footer{
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-tag">
+       <div class="hero-tag">
         ⚡ Backend Developer · Java & Spring Boot
       </div>
       <h1>
@@ -812,7 +904,7 @@ footer{
           <p>BCA CGPA</p>
         </div>
         <div class="stat">
-          <h3>3</h3>
+          <h3>2</h3>
           <p>Internships</p>
         </div>
       </div>
@@ -944,21 +1036,21 @@ footer{
       </div>
       <div class="timeline-item">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-          <h3>AI Response Evaluator</h3>
+          <h3>AI Evaluator</h3>
         </div>
         <span>Outlier / Remotasks · Remote (US)</span>
         <p>Evaluated AI-generated responses for reasoning, factual accuracy, and response quality. Contributed to LLM training refinement.</p>
       </div>
       <div class="timeline-item">
-        <h3>Web Developer Intern</h3>
-        <span>Confederation of Global Innovators (CGI) · Remote</span>
-        <p>Revamped corporate website in ASP.NET. Built API-driven quiz application and interactive e-commerce product page.</p>
+        <h3>SEO Intern</h3> 
+        <span>WebMobi 360 · Pune (Remote)</span>
+        <p>Conducted technical SEO audits using SEMrush, managed LinkedIn content, and supported digital marketing operations.</p>
       </div>
       
       <div class="timeline-item">
-        <h3>SEO & Digital Marketing Intern</h3>
-        <span>WebMobi 360 · Pune (Remote)</span>
-        <p>Conducted technical SEO audits using SEMrush, managed LinkedIn content, and supported digital marketing operations.</p>
+        <h3>Web Developer Intern</h3>
+        <span>Confederation of Global Innovators (CGI) · Remote</span>
+        <p>Revamped corporate website in ASP.NET. Built API-driven quiz application and interactive e-commerce product page.</p>
       </div>
     </div>
   </div>
@@ -966,9 +1058,9 @@ footer{
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container contact">
+  <div class="container">
+    <h2 class="section-title">Let's Connect</h2>
     <div class="contact-box">
-      <h2 class="section-title">Let's Connect</h2>
       <p>Open to backend development opportunities, internships, and software engineering roles.</p>
       <div class="contact-buttons">
         <a href="mailto:sharma08.ts@gmail.com" class="btn btn-primary">
