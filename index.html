@@ -18,7 +18,6 @@
   --text:#f8fafc;
   --muted:#94a3b8;
   --border:#334155;
-
   --primary:#38bdf8;
   --secondary:#818cf8;
   --accent:#22c55e;
@@ -40,13 +39,13 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
+  overflow-x: hidden;
 }
 
-/* JUSTIFIED TEXT for About Me, Projects, Experience, and Contact */
-.about-card p,      /* About Me paragraphs */
-.project-card p,    /* Project descriptions */
-.timeline-item p,   /* Experience descriptions */
-.contact-box p {    /* Let's Connect paragraph */
+.about-card p,
+.project-card p,
+.timeline-item p,
+.contact-box p {
   text-align: justify;
   text-justify: inter-word;
 }
@@ -54,9 +53,9 @@ body{
 .container{
   width:min(1100px,90%);
   margin:auto;
+  padding:0 0;
+  max-width:1100px;
 }
-
-/* NAVBAR */
 
 nav{
   position:sticky;
@@ -101,7 +100,6 @@ nav{
   width:100%;
 }
 
-/* HAMBURGER MENU */
 .hamburger{
   display:none;
   flex-direction:column;
@@ -149,7 +147,6 @@ nav{
   width:100%;
 }
 
-/* MOBILE MENU */
 @media(max-width:768px){
   .hamburger{
     display:flex;
@@ -191,8 +188,6 @@ nav{
     transform:rotate(-45deg) translate(7px,-7px);
   }
 }
-
-/* HERO */
 
 .hero{
   min-height:85vh;
@@ -261,7 +256,6 @@ nav{
   }
 }
 
-/* TYPING ANIMATION */
 .typing-text{
   display:inline;
   border-right:2px solid var(--primary);
@@ -274,8 +268,6 @@ nav{
   0%,100%{border-color:var(--primary)}
   50%{border-color:transparent}
 }
-
-/* BUTTONS */
 
 .btn{
   padding:14px 28px;
@@ -309,8 +301,6 @@ nav{
   transform:translateY(-3px);
 }
 
-/* SECTION */
-
 section{
   padding: 30px 0;
 }
@@ -340,8 +330,6 @@ section{
   background:var(--gradient);
 }
 
-/* ABOUT */
-
 .about{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -365,8 +353,6 @@ section{
   color:var(--muted);
   margin-bottom:18px;
 }
-
-/* STATS */
 
 .stats{
   display:grid;
@@ -401,11 +387,11 @@ section{
   color:var(--muted);
 }
 
-/* SKILLS - IMPROVED VERSION */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:24px;
+  align-items:stretch;
 }
 
 .skill-card{
@@ -416,6 +402,7 @@ section{
   transition:all 0.3s;
   display:flex;
   flex-direction:column;
+  height:100%;
 }
 
 .skill-card:hover{
@@ -434,6 +421,7 @@ section{
   gap:12px;
   justify-content:flex-start;
   align-items:center;
+  margin-top:auto;
 }
 
 .skill-tags span{
@@ -445,14 +433,13 @@ section{
   transition:all 0.2s;
   display:inline-block;
   text-align:center;
+  white-space:nowrap;
 }
 
 .skill-tags span:hover{
   background:rgba(129,140,248,0.25);
   transform:scale(1.02);
 }
-
-/* PROJECTS */
 
 .projects-grid{
   display:grid;
@@ -518,8 +505,6 @@ section{
   gap:10px;
 }
 
-/* EXPERIENCE */
-
 .timeline{
   display:flex;
   flex-direction:column;
@@ -571,14 +556,13 @@ section{
   color:var(--muted);
 }
 
-/* CONTACT */
 .contact-box{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:28px;
   padding:35px 30px;
   transition:all 0.3s;
-  text-align: center;
+  text-align:center;
 }
 
 .contact-box:hover{
@@ -590,7 +574,7 @@ section{
   color:var(--muted);
   max-width:700px;
   margin:0 auto 30px;
-  text-align: justify;
+  text-align:justify;
 }
 
 .contact-buttons{
@@ -600,8 +584,6 @@ section{
   flex-wrap:wrap;
 }
 
-/* FOOTER */
-
 footer{
   border-top:1px solid var(--border);
   padding:30px 0;
@@ -609,50 +591,38 @@ footer{
   color:var(--muted);
 }
 
-/* RESPONSIVE */
-
 @media(max-width:900px){
-
   .hero h1{
     font-size:3rem;
   }
-
   .about,
   .skills-grid,
   .projects-grid{
     grid-template-columns:1fr;
   }
-
   .section-title{
     font-size:1.8rem;
   }
-
 }
 
 @media(max-width:768px){
-
   section{
-    padding:25px;
+    padding:25px 0;
   }
-
   .hero{
     min-height:20vh;
   }
-
   .hero h1{
     font-size:2.5rem;
     line-height:1.2;
   }
-
   .hero p{
     font-size:1rem;
     margin-bottom:28px;
   }
-
   .section-title{
     margin-bottom:32px;
   }
-
   .about-card,
   .skill-card,
   .project-card,
@@ -661,148 +631,117 @@ footer{
     padding:24px;
     border-radius:20px;
   }
-
   .stats{
     gap:14px;
   }
-
   .stat{
     padding:20px;
   }
-
   .projects-grid,
   .skills-grid,
   .about{
     gap:18px;
   }
-
   .timeline{
     gap:18px;
   }
-
   .hero-buttons,
   .contact-buttons{
     gap:12px;
   }
-
   footer{
     padding:22px 0;
   }
-
-footer .container {
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    text-align: center;
-    width: 100%;
-    scrollbar-width: none;  /* Hide scrollbar Firefox */
-    -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
+  footer .container{
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    text-align:center;
+    width:100%;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
   }
-  
-  footer .container::-webkit-scrollbar {
-    display: none;  /* Hide scrollbar Chrome/Safari */
+  footer .container::-webkit-scrollbar{
+    display:none;
   }
-
-.skill-card {
-    padding: 20px;
+  .skill-card{
+    padding: 15px 15px;
   }
-  
-  .skill-tags {
-    display: flex;
-    flex-wrap: nowrap;      /* Don't wrap to next line */
-    overflow-x: auto;       /* Allow horizontal scroll if needed */
-    gap: 10px;
-    padding-bottom: 8px;    /* Space for scroll indicator */
-    -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
+  .skill-tags{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    gap:10px;
+    padding-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:var(--primary) var(--card);
   }
-  
-  .skill-tags span {
-    padding: 6px 14px;
-    font-size: 0.8rem;
-    white-space: nowrap;    /* Keep skill text in one line */
-    flex-shrink: 0;         /* Prevent tags from shrinking */
+  .skill-tags span{
+    padding:6px 14px;
+    font-size:0.8rem;
+    white-space:nowrap;
+    flex-shrink:0;
   }
-  
-  /* Hide scrollbar but keep functionality (cleaner look) */
-  .skill-tags {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) var(--card);
+  .skill-tags::-webkit-scrollbar{
+    height:3px;
   }
-  
-  .skill-tags::-webkit-scrollbar {
-    height: 3px;
+  .skill-tags::-webkit-scrollbar-track{
+    background:var(--card);
+    border-radius:10px;
   }
-  
-  .skill-tags::-webkit-scrollbar-track {
-    background: var(--card);
-    border-radius: 10px;
-  }
-  
-  .skill-tags::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
+  .skill-tags::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:10px;
   }
 }
 
 @media(max-width:600px){
-
   .hero h1{
     font-size:2.2rem;
   }
-
   .stats{
     grid-template-columns:1fr;
   }
-
   .hero-tag{
     font-size:0.75rem;
   }
-
-.hero-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 12px;
-    width: 100%;
+  .hero-buttons{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    gap:12px;
+    width:100%;
   }
-  
-  .hero-buttons .btn {
-    flex: 1;
-    width: 50%;
-    padding: 10px 8px;
-    font-size: 0.8rem;
-    justify-content: center;
-    white-space: nowrap;
+  .hero-buttons .btn{
+    flex:1;
+    width:50%;
+    padding:10px 8px;
+    font-size:0.8rem;
+    justify-content:center;
+    white-space:nowrap;
   }
-
-
   .contact-buttons{
     flex-direction:column;
     align-items:center;
   }
-
   .contact-buttons .btn{
     width:100%;
     max-width:250px;
     justify-content:center;
   }
-
-  /* SKILLS mobile further improvements */
   .skill-tags{
     gap:8px;
   }
-  
   .skill-tags span{
     padding:5px 10px;
     font-size:0.75rem;
   }
 }
-
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="container nav-container">
     <div class="logo">
@@ -832,7 +771,6 @@ footer .container {
     navLinks.classList.toggle('active');
   });
   
-  // Close menu when clicking a link
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
@@ -841,11 +779,10 @@ footer .container {
   });
 </script>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-       <div class="hero-tag">
+      <div class="hero-tag">
         ⚡ Backend Developer · Java & Spring Boot
       </div>
       <h1>
@@ -869,7 +806,6 @@ footer .container {
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <h2 class="section-title">About Me</h2>
@@ -912,7 +848,6 @@ footer .container {
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <h2 class="section-title">Skills</h2>
@@ -959,7 +894,6 @@ footer .container {
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Projects</h2>
@@ -1021,12 +955,11 @@ footer .container {
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <h2 class="section-title">Experience</h2>
     <div class="timeline">
-        <div class="timeline-item">
+      <div class="timeline-item">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
           <h3>Data Entry Operator / Jr. Clerk</h3>
           <span style="background:rgba(34,197,94,0.15); color:#22c55e; font-size:0.7rem; padding:4px 12px; border-radius:20px;">● Active</span>
@@ -1046,7 +979,6 @@ footer .container {
         <span>WebMobi 360 · Pune (Remote)</span>
         <p>Conducted technical SEO audits using SEMrush, managed LinkedIn content, and supported digital marketing operations.</p>
       </div>
-      
       <div class="timeline-item">
         <h3>Web Developer Intern</h3>
         <span>Confederation of Global Innovators (CGI) · Remote</span>
@@ -1056,7 +988,6 @@ footer .container {
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Let's Connect</h2>
@@ -1077,7 +1008,6 @@ footer .container {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     © 2026 Tanu Sharma · Backend Developer · Built with 💙
@@ -1085,7 +1015,6 @@ footer .container {
 </footer>
 
 <script>
-  // Typing animation effect
   const words = ['scalable', 'efficient', 'secure', 'high-performance'];
   let wordIndex = 0;
   let charIndex = 0;
