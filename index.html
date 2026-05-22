@@ -33,10 +33,10 @@
     }
 
     .container {
-      width: min(1100px, 90%);
-      margin: auto;
-      max-width: 1100px;
-    }
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  max-width: 1100px;
+}
 
     html {
       scroll-behavior: smooth;
@@ -683,7 +683,7 @@
         font-size: 1.2rem;
       }
 
-      .skill-tags {
+      /* .skill-tags {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -693,8 +693,13 @@
         scrollbar-width: thin;
         scrollbar-color: var(--primary) var(--card);
         margin-top: 6px;
-      }
-
+      } */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
       .skill-tags span {
         padding: 6px 12px;
         font-size: 0.8rem;
@@ -747,7 +752,7 @@
         padding: 18px;
       }
 
-      footer .container {
+      /* footer .container {
         overflow-x: auto;
         overflow-y: hidden;
         width: 100%;
@@ -755,8 +760,12 @@
         -ms-overflow-style: none;
         white-space: normal;
         text-align: center;
-      }
-
+      } */
+footer .container {
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+}
       footer .container::-webkit-scrollbar {
         display: none;
       }
