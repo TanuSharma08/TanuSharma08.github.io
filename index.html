@@ -43,6 +43,7 @@
     }
 
     #about,
+    #github-streak,
     #skills,
     #projects,
     #experience,
@@ -862,6 +863,38 @@
         padding: 12px;
       }
     }
+
+    /* GitHub Streak responsive styles */
+.streak-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.streak-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.streak-text {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+/* Mobile specific */
+@media(max-width:768px) {
+  .streak-container {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  
+  .streak-text {
+    font-size: 0.85rem;
+    margin-top: 12px;
+  }
+}
   </style>
 </head>
 
@@ -888,6 +921,7 @@
 
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#github-streak">GitHub</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -1012,6 +1046,19 @@
       </div>
     </div>
   </section>
+
+<!-- GitHub Streak Section -->
+<section id="github-streak">
+  <div class="container">
+    <h2 class="section-title">GitHub</h2>
+    <div class="streak-container">
+      <img src="https://streak-stats.demolab.com/?user=TanuSharma08&theme=github-dark" alt="GitHub Streak" class="streak-image">
+    </div>
+    <p class="streak-text">
+      🔥 Daily coding streak • Built with consistency
+    </p>
+  </div>
+</section>
 
   <!-- Projects -->
   <section id="projects">
