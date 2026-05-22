@@ -33,10 +33,10 @@
     }
 
     .container {
-  width: min(1100px, 90%);
-  margin: 0 auto;
-  max-width: 1100px;
-}
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      max-width: 1100px;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -615,6 +615,11 @@
     }
 
     @media(max-width:768px) {
+      .container {
+        width: 92%;
+        padding: 0;
+      }
+
       section {
         padding: 20px 0;
       }
@@ -683,7 +688,7 @@
         font-size: 1.2rem;
       }
 
-      /* .skill-tags {
+      .skill-tags {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -693,13 +698,29 @@
         scrollbar-width: thin;
         scrollbar-color: var(--primary) var(--card);
         margin-top: 6px;
-      } */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 6px;
-}
+      }
+
+      .skill-tags span {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .skill-tags::-webkit-scrollbar {
+        height: 3px;
+      }
+
+      .skill-tags::-webkit-scrollbar-track {
+        background: var(--card);
+        border-radius: 10px;
+      }
+
+      .skill-tags::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+      }
+
       .skill-tags span {
         padding: 6px 12px;
         font-size: 0.8rem;
@@ -752,20 +773,12 @@
         padding: 18px;
       }
 
-      /* footer .container {
-        overflow-x: auto;
-        overflow-y: hidden;
+      footer .container {
         width: 100%;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        white-space: normal;
         text-align: center;
-      } */
-footer .container {
-  width: 100%;
-  text-align: center;
-  white-space: normal;
-}
+        white-space: normal;
+      }
+
       footer .container::-webkit-scrollbar {
         display: none;
       }
