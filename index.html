@@ -615,11 +615,6 @@
     }
 
     @media(max-width:768px) {
-      .container {
-        width: 92%;
-        padding: 0;
-      }
-
       section {
         padding: 20px 0;
       }
@@ -690,42 +685,16 @@
 
       .skill-tags {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        flex-wrap: wrap;
         gap: 10px;
-        padding-bottom: 6px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: var(--primary) var(--card);
         margin-top: 6px;
+        justify-content: flex-start;
       }
 
       .skill-tags span {
         padding: 6px 12px;
         font-size: 0.8rem;
         white-space: nowrap;
-        flex-shrink: 0;
-      }
-
-      .skill-tags::-webkit-scrollbar {
-        height: 3px;
-      }
-
-      .skill-tags::-webkit-scrollbar-track {
-        background: var(--card);
-        border-radius: 10px;
-      }
-
-      .skill-tags::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 10px;
-      }
-
-      .skill-tags span {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        flex-shrink: 0;
       }
 
       .skill-tags::-webkit-scrollbar {
