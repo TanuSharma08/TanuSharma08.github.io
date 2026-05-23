@@ -425,7 +425,7 @@
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
       justify-content: flex-start;
       align-items: center;
       margin-top: auto;
@@ -895,6 +895,17 @@
         margin-top: 12px;
       }
     }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .skill-tags span {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+
+      .skills-grid {
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -1012,21 +1023,7 @@
             <span>Python</span>
             <span>JavaScript</span>
             <span>ReactJS</span>
-            <span>Data Structure & Algorithms </span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>🛠️ Tools & Platforms</h3>
-          <div class="skill-tags">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Postman</span>
-            <span>Jira</span>
-            <span>VS Code</span>
-            <span>IntelliJ IDEA</span>
-            <span>Render</span>
-            <span>Vercel</span>
-            <span>Netlify</span>
+            <span>DSA</span>
           </div>
         </div>
         <div class="skill-card">
@@ -1045,7 +1042,32 @@
             <span>MongoDB</span>
           </div>
         </div>
+        <div class="skill-card">
+          <h3>🔧 Version Control</h3>
+          <div class="skill-tags">
+            <span>Git</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>🛠️ Development Tools</h3>
+          <div class="skill-tags">
+            <span>Postman</span>
+            <span>Jira</span>
+            <span>VS Code</span>
+            <span>IntelliJ IDEA</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>☁️ Deployment</h3>
+          <div class="skill-tags">
+            <span>Render</span>
+            <span>Vercel</span>
+            <span>Netlify</span>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   </section>
 
